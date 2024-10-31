@@ -1,0 +1,65 @@
+/* Gaya Umum */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4; /* Latar belakang abu-abu terang */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333; /* Warna teks gelap */
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menghapus spasi antar border */
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Border tabel */
+}
+
+th, td {
+    padding: 8px; /* Jarak dalam sel tabel */
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50; /* Warna latar belakang header tabel */
+    color: white; /* Warna teks putih untuk header */
+}
+
+/* Form dan Input */
+input[type="text"], input[type="date"], input[type="number"], select, textarea {
+    width: 100%; /* Lebar penuh */
+    padding: 8px; /* Jarak dalam input */
+    margin: 5px 0; /* Margin vertikal */
+    border: 1px solid #ccc; /* Border input */
+    border-radius: 4px; /* Sudut melengkung */
+    box-sizing: border-box; /* Menyertakan padding dalam ukuran total */
+}
+
+/* Tombol */
+.btn {
+    padding: 10px 15px; /* Padding untuk tombol */
+    background-color: #28a745; /* Warna latar belakang hijau */
+    color: #fff; /* Warna teks putih */
+    border: none; /* Tanpa border */
+    border-radius: 4px; /* Sudut melengkung */
+    cursor: pointer; /* Tangan saat hover */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+.btn:hover {
+    background-color: #218838; /* Warna lebih gelap saat hover */
+}
+
+.btn-back {
+    background-color: #007bff; /* Warna biru untuk tombol kembali */
+}
+
+.btn-back:hover {
+    background-color: #0056b3; /* Warna lebih gelap untuk tombol kembali saat hover */
+}
