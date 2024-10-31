@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             if ($conn->query($sql) === TRUE) {
                 echo "Artikel berhasil disimpan.";
-                header("Location: admin.php"); // Redirect ke admin.php setelah submit
+                header("Location: dashboard.php"); // Redirect ke dashboard.php setelah submit
                 exit();
             } else {
                 echo "Gagal menyimpan artikel: " . $conn->error; // Menampilkan kesalahan
@@ -131,7 +131,7 @@ $result = $conn->query($sql);
         <!-- Halaman Tambah atau Edit Artikel -->
         <h2><?= $action === 'edit' ? 'Edit Artikel' : 'Tambah Artikel Baru' ?></h2>
         <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 20px;">
-            <form action="admin.php" method="post" enctype="multipart/form-data">
+            <form action="dashboard.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $action === 'edit' ? $edit_row['id'] : '' ?>"> <!-- Menyimpan ID untuk edit -->
                 <tr>
                     <td><label>Judul:</label></td>
@@ -177,7 +177,7 @@ $result = $conn->query($sql);
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <input type="submit" value="<?= $action === 'edit' ? 'Update Artikel' : 'Tambah Artikel' ?>" class="btn btn-add">
-                        <a href="admin.php" class="btn btn-back">Kembali ke Dashboard</a>
+                        <a href="dashboard.php" class="btn btn-back">Kembali ke Dashboard</a>
                     </td>
                 </tr>
             </form>
@@ -187,8 +187,8 @@ $result = $conn->query($sql);
         <!-- Tabel Artikel -->
         <!-- Fitur pencarian -->
         <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
-    <a href="admin.php?action=add" class="btn btn-add">+ Tambah Artikel</a>
-    <form action="admin.php" method="get" style="display: flex; align-items: center;">
+    <a href="dashboard.php?action=add" class="btn btn-add">+ Tambah Artikel</a>
+    <form action="dashboard.php" method="get" style="display: flex; align-items: center;">
         <input type="text" name="search" placeholder="Cari artikel..." style="padding: 10px; margin-left: 20px;">
         <input type="submit" value="Cari" style="padding: 10px; background-color: #049b13; color: white; border: none; border-radius: 5px; cursor: pointer;">
     </form>
@@ -222,8 +222,8 @@ $result = $conn->query($sql);
                             <td><img src="<?= htmlspecialchars($row['images']) ?>" alt="Gambar" style="width: 50px; height: 50px; object-fit: cover;"></td>
                             <td><?= $row['views'] ?></td>
                             <td>
-                                <a href="admin.php?action=edit&id=<?= $row['id'] ?>">Edit</a> |
-                                <a href="admin.php?action=delete&id=<?= $row['id'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?')">Hapus</a>
+                                <a href="dashboard.php?action=edit&id=<?= $row['id'] ?>">Edit</a> |
+                                <a href="dashboard.php?action=delete&id=<?= $row['id'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
