@@ -39,7 +39,7 @@ $result = $conn->query($sql);
             <div class="grids5-info img-block-mobile mt-5">
                 <div class="blog-info align-self">
                     <span class="category"><?= htmlspecialchars($row['kategori']) ?></span>
-                    <a href="#blog-single" class="blog-desc mt-0"><?= htmlspecialchars($row['judul']) ?></a>
+                    <a href="detail.php?id=<?= $row['id'] ?>" class="blog-desc mt-0"><?= htmlspecialchars($row['judul']) ?></a>
                     <p><?= htmlspecialchars(substr($row['isi'], 0, 100)) ?>...</p>
                     <div class="author align-items-center mt-3 mb-1">
                         <a href="#author"><?= htmlspecialchars($row['author']) ?></a>
