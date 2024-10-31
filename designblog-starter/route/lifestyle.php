@@ -44,7 +44,7 @@ $result = $conn->query($sql);
                         </a>
                     </div>
                     <div class="card-body p-0 blog-details">
-                        <a href="#blog-single" class="blog-desc"><?= htmlspecialchars($row['judul']) ?></a>
+                    <a href="detail.php?id=<?= $row['id'] ?>" class="blog-desc mt-0"><?= htmlspecialchars($row['judul']) ?></a>
                         <p><?= htmlspecialchars(substr($row['isi'], 0, 100)) ?>...</p>
                         <div class="author align-items-center mt-3 mb-1">
                             <a href="#author"><?= htmlspecialchars($row['author']) ?></a> in <a href="#url">Lifestyle</a>
