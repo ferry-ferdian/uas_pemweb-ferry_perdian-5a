@@ -1,10 +1,63 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0; /* Menghapus margin untuk body */
     background-color: #f4f4f4; /* Latar belakang abu-abu terang */
+    display: flex; /* Menggunakan Flexbox untuk tata letak */
 }
 
+/* Sidebar */
+.sidebar {
+    position: fixed; /* Sidebar tetap di kiri */
+    left: -220px; /* Mulai dari luar layar */
+    width: 220px;
+    height: 100%;
+    background-color: #333; /* Warna latar belakang sidebar */
+    color: white; /* Warna teks di sidebar */
+    transition: left 0.3s ease; /* Transisi yang halus saat membuka/menutup */
+    z-index: 1000; /* Pastikan sidebar berada di atas konten lain */
+    padding-top: 20px; /* Jarak dari atas untuk menu */
+}
+
+.sidebar.open {
+    left: 0; /* Menampilkan sidebar */
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none; /* Menghapus bullet point dari list */
+    padding: 0; /* Menghapus padding */
+}
+
+.sidebar ul li {
+    padding: 10px; /* Jarak dalam item list */
+}
+
+.sidebar ul li a {
+    color: white; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757; /* Efek hover pada tautan */
+}
+
+/* Konten Utama */
+.main-content {
+    margin-left: 0; /* Awalnya tidak ada margin */
+    transition: margin-left 0.3s ease; /* Transisi untuk konten utama */
+    padding: 20px; /* Padding untuk konten utama */
+    width: 100%; /* Lebar penuh */
+}
+
+.main-content.shift {
+    margin-left: 220px; /* Menambahkan margin saat sidebar terbuka */
+}
+
+/* Judul */
 h1, h2 {
     text-align: center;
     color: #333; /* Warna teks gelap */
@@ -12,9 +65,9 @@ h1, h2 {
 
 /* Tabel */
 table {
-    width: 100%;
+    width: 100%; /* Lebar tabel penuh */
     border-collapse: collapse; /* Menghapus spasi antar border */
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Jarak bawah tabel */
 }
 
 table, th, td {
@@ -22,8 +75,8 @@ table, th, td {
 }
 
 th, td {
-    padding: 8px; /* Jarak dalam sel tabel */
-    text-align: left;
+    padding: 10px; /* Jarak dalam sel tabel */
+    text-align: left; /* Teks rata kiri */
 }
 
 th {
@@ -34,7 +87,7 @@ th {
 /* Form dan Input */
 input[type="text"], input[type="date"], input[type="number"], select, textarea {
     width: 100%; /* Lebar penuh */
-    padding: 8px; /* Jarak dalam input */
+    padding: 10px; /* Jarak dalam input */
     margin: 5px 0; /* Margin vertikal */
     border: 1px solid #ccc; /* Border input */
     border-radius: 4px; /* Sudut melengkung */
@@ -50,6 +103,7 @@ input[type="text"], input[type="date"], input[type="number"], select, textarea {
     border-radius: 4px; /* Sudut melengkung */
     cursor: pointer; /* Tangan saat hover */
     text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    transition: background-color 0.3s; /* Transisi untuk efek hover */
 }
 
 .btn:hover {
@@ -62,4 +116,25 @@ input[type="text"], input[type="date"], input[type="number"], select, textarea {
 
 .btn-back:hover {
     background-color: #0056b3; /* Warna lebih gelap untuk tombol kembali saat hover */
+}
+
+/* Tombol untuk membuka sidebar */
+.toggle-btn {
+    background-color: #007BFF; /* Warna biru untuk tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed; /* Agar tombol panah selalu terlihat */
+    left: 10px; /* Jarak dari kiri */
+    top: 20px; /* Jarak dari atas */
+    z-index: 1100; /* Di atas sidebar */
+}
+
+/* Gambar di tabel */
+td img {
+    width: 50px; /* Lebar gambar */
+    height: 50px; /* Tinggi gambar */
+    object-fit: cover; /* Memastikan gambar terpotong jika perlu */
 }

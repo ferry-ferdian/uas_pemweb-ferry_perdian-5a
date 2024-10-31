@@ -60,6 +60,11 @@ Author URL: http://w3layouts.com
                         <li class="nav-item @@about__active">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">
+                            <i class="fa fa-user-circle-o"></i> Dashboard Admin
+                        </a>
+                        </li>
                     </ul>
 
                     <!--/search-right-->
