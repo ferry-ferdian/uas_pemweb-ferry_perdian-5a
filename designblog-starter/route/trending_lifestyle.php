@@ -22,7 +22,7 @@ $result = $conn->query($sql);
             <div class="grids5-info">
                 <h4><?= sprintf('%02d', $counter) ?>.</h4>
                 <div class="blog-info">
-                    <a href="#blog-single" class="blog-desc1"><?= htmlspecialchars($row['judul']) ?></a>
+                <a href="detail.php?id=<?= $row['id'] ?>" class="blog-desc mt-0"><?= htmlspecialchars($row['judul']) ?></a>
                     <div class="author align-items-center mt-2 mb-1">
                         <a href="#author"><?= htmlspecialchars($row['author']) ?></a> in <a href="#url">Lifestyle</a>
                     </div>
